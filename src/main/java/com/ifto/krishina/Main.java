@@ -12,8 +12,8 @@ public class Main {
         URI boletoBrasil = Main.class.getClassLoader().getResource("banco-brasil-1.csv").toURI();
         URI boletoBradesco= Main.class.getClassLoader().getResource("bradesco-1.csv").toURI();
 
+
         ProcessarBoletos processador = new ProcessarBoletos(new LeituraRetornoBradesco());
-        System.out.println("lendo arquivo " + boletoBradesco + "\n");
         processador.processar(boletoBradesco);
     }
 }
