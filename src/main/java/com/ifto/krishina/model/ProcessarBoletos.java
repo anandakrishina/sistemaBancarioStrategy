@@ -11,16 +11,17 @@ public class ProcessarBoletos {
     }
 
     public void processar(URI caminhoArquivo){
-        System.out.println("BOLETOS ----------------");
-        System.out.println("__________________________");
+        System.out.println("_______________BOLETOS________________");
+        System.out.println("______________________________________");
         List<Boleto> boletos = leituraRetorno.lerArquivo(caminhoArquivo);
-        for (Boleto boleto : boletos){
-            System.out.println(boleto);
-
-        }
+        boletos.forEach(System.out::println);
+//        for (Boleto boleto : boletos){
+//            System.out.println(boleto);
+//        }
     }
 
     public void setLeituraRetorno(LeituraRetorno leituraRetorno){
         this.leituraRetorno = leituraRetorno;
     }
+
 }
