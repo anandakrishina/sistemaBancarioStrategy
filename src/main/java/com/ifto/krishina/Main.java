@@ -1,5 +1,6 @@
 package com.ifto.krishina;
 
+import com.ifto.krishina.model.LeituraRetorno;
 import com.ifto.krishina.model.LeituraRetornoBancoDoBrasil;
 import com.ifto.krishina.model.LeituraRetornoBradesco;
 import com.ifto.krishina.model.ProcessarBoletos;
@@ -19,6 +20,8 @@ public class Main {
         processador.processar(boletoBrasil);
         processador.setLeituraRetorno(LeituraRetornoBradesco::lerArquivo);
         processador.processar(boletoBradesco);
+        processador.setLeituraRetorno(LeituraRetorno::lerArquivoBB);
+        processador.processar(boletoBrasil);
 
         System.out.println(Path.of(boletoBradesco).toString());
         //processador.setLeituraRetorno();
