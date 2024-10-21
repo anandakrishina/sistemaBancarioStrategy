@@ -10,10 +10,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeituraRetornoBradesco implements LeituraRetorno{
+import static com.ifto.krishina.model.ProcessarBoletos.FORMATO_DATA;
+import static com.ifto.krishina.model.ProcessarBoletos.FORMATO_DATA_HORA;
 
-    @Override
-    public List<Boleto> lerArquivo(URI nomeArquivo) {
+public class LeituraRetornoBradesco {
+
+
+    public static List<Boleto> lerArquivo(URI nomeArquivo) {
         try{
             List<String> lineList = Files.readAllLines(Paths.get(nomeArquivo));
             List<Boleto> boletoList = new ArrayList<>();

@@ -1,20 +1,19 @@
 package com.ifto.krishina.model;
 
 import java.io.IOException;
-import java.io.UncheckedIOException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeituraRetornoBancoDoBrasil implements LeituraRetorno {
+import static com.ifto.krishina.model.ProcessarBoletos.FORMATO_DATA;
 
-    @Override
-    public List<Boleto> lerArquivo(URI nomeArquivo) {
+public class LeituraRetornoBancoDoBrasil {
+    public static List<Boleto> lerArquivo(URI nomeArquivo) {
         try{
+
             List<String> lineList = Files.readAllLines(Paths.get(nomeArquivo));
 
             List<Boleto>boletoList = new ArrayList<>();
