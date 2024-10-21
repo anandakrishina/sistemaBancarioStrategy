@@ -34,5 +34,4 @@ public class ProcessarBoletos {
     public void setLeituraRetorno(Function<URI,List<Boleto>> leituraRetorno){
         this.leituraRetorno = leituraRetorno;
     }
-
 }
